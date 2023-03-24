@@ -35,7 +35,7 @@ app.get('/', function (req, res) {
 router.post('/file', (req, res) => {
   let body = req.body
   console.log(body)
-  fs.appendFile('database.db', body.text, function (err) {
+  fs.appendFile('database.db', body.text + "\n", function (err) {
     if (err) {
       console.log(err);
       return res.status(505).json("Cant open file.");
